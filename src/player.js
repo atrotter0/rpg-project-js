@@ -1,5 +1,5 @@
 import { Item } from './item';
-import { Arsenal } from './arsenal';
+import { ItemBag } from './itemBag';
 
 export class Player {
   constructor(name) {
@@ -9,7 +9,7 @@ export class Player {
     this.expToNextLevel = 100;
     this.stats = {};
     this.items = {};
-    this.allItems = new Arsenal();
+    this.allItems = new ItemBag();
     this.equippedWeapon = {};
     this.ahnCoin = 0;
   }

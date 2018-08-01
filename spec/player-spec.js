@@ -1,6 +1,6 @@
 import { Player, Nano, Scrapper, Merc } from './../src/player.js';
 import { Item } from './../src/item.js';
-import { Arsenal } from './../src/arsenal.js';
+import { ItemBag } from './../src/itemBag.js';
 
 describe('Player', function() {
   it('should test whether a Player has properties after instantiation', function() {
