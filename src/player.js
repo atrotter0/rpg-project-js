@@ -1,4 +1,5 @@
 import { Item } from './item';
+import { Arsenal } from './arsenal';
 
 export class Player {
   constructor(name) {
@@ -8,6 +9,7 @@ export class Player {
     this.expToNextLevel = 100;
     this.stats = {};
     this.items = {};
+    this.allItems = new Arsenal();
     this.equippedWeapon = {};
     this.ahnCoin = 0;
   }
@@ -23,8 +25,10 @@ export class Nano extends Player {
       stamina: 10,
       energy: 10,
       resourcefulness: 1
-    }
-    //add item by default to each class
+    };
+    this.items = {
+      "dataPad": this.allItems.dataPad
+    };
   }
 }
 
@@ -38,8 +42,10 @@ export class Scrapper extends Player {
       stamina: 15,
       energy: 15,
       resourcefulness: 3
-    }
-    //add item by default to each class
+    };
+    this.items = {
+      "photonPistol": this.allItems.photonPistol
+    };
   }
 }
 
@@ -52,7 +58,9 @@ export class Merc extends Player {
       might: 4,
       stamina: 20,
       resourcefulness: 2
-    }
-    //add item by default to each class
+    };
+    this.items = {
+      "laserGatling": this.allItems.laserGatling
+    };
   }
 }
