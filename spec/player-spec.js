@@ -1,7 +1,6 @@
 import { Player, Nano, Scrapper, Merc } from './../src/player.js';
 
 describe('Player', function() {
-
   it('should test whether a Player has properties after instantiation', function() {
     const player1 = new Player("Kevin");
     expect(player1.name).toEqual("Kevin");
