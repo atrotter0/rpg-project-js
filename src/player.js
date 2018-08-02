@@ -17,6 +17,21 @@ export class Player {
   attack(enemy) {
     enemy.stats.stamina -= (this.stats[this.primaryStat] + this.equippedWeapon.stats.damage);
   }
+
+  checkLevelUp() {
+    if (this.exp >= this.expToNextLevel) this.levelUp();
+  }
+
+  levelUp() {
+    this.stats = {
+      instinct: this.stats.instinct += 1,
+      connectivity: this.stats.connectivity += 1,
+      might: this.stats.might += 1,
+      stamina: this.stats.stamina += 10,
+      energy: this.stats.energy += 10,
+      resourcefulness: this.stats.resourcefulness += 1
+    }
+  }
 }
 
 export class Nano extends Player {
@@ -63,6 +78,7 @@ export class Merc extends Player {
       connectivity: 1,
       might: 5,
       stamina: 20,
+      energy: 0,
       resourcefulness: 2
     };
     this.primaryStat = "might";

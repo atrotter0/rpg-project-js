@@ -76,4 +76,19 @@ describe('Player', function() {
     merc.attack(enemy);
     expect(enemy.stats.stamina).toEqual(0);
   });
+
+  it('should test that stats increase when a player levels up', function() {
+    const merc = new Merc();
+    merc.exp = 100;
+    merc.checkLevelUp();
+    const stats = {
+      instinct: 2,
+      connectivity: 2,
+      might: 6,
+      stamina: 30,
+      energy: 10,
+      resourcefulness: 3
+    };
+    expect(merc.stats).toEqual(stats);
+  });
 });
