@@ -21,7 +21,18 @@ describe('Game', function() {
     expect(game.lootTable.length).toEqual(4);
   });
 
-  it('should test that the correct count of items is returned', function() {
+  it('shoud test that a loot table is correctly built from all items', function() {
+    const expectedTable = ["photonPistol", "laserGatling", "dataPad", "beet"];
+    expect(game.lootTable).toEqual(expectedTable);
+  });
+
+  it('should test that the correct count of items is returned from the lootTable', function() {
     expect(game.allItemsCount()).toEqual(4);
+  });
+
+  it('should test that an item is awarded to player', function() {
+    game.awardLoot();
+    const playerItems = Object.keys(game.player.items);
+    expect(playerItems.length).toEqual(1);
   });
 });
