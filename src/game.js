@@ -9,6 +9,7 @@ export class Game {
     this.allItems = new ItemBag();
     this.allEnemies = new EnemyBag();
     this.lootTable = this.buildLootTable();
+    this.currentEnemy = {};
   }
 
   buildLootTable() {
@@ -19,9 +20,13 @@ export class Game {
     return this.lootTable.length;
   }
 
-  awardLoot(player) {
+  awardLoot() {
     const number = Math.floor(Math.random() * this.allItemsCount() - 1);
     const loot = this.allItems[this.lootTable[number]];
     this.player.items[loot.id] = loot;
+  }
+
+  startBattle(enemy) {
+    this.currentEnemy = enemy;
   }
 }

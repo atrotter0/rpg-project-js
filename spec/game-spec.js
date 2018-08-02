@@ -19,6 +19,7 @@ describe('Game', function() {
     expect(game.allItems).toEqual(itemBag);
     expect(game.allEnemies).toEqual(enemyBag);
     expect(game.lootTable.length).toEqual(4);
+    expect(game.currentEnemy).toEqual(undefined);
   });
 
   it('shoud test that a loot table is correctly built from all items', function() {
