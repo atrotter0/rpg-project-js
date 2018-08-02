@@ -28,9 +28,14 @@ A cyberpunk text-based RPG adventure built with JavaScript.
 ## Technologies Used
 
 * JavaScript
-* jQuery 3.3.1
 * Node.js
+* jQuery 3.3.1
 * Bootstrap 4.1.3
+* Babel
+* Webpack
+* ESLint
+* Jasmine
+* Karma
 
 ## License
 
