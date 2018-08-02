@@ -19,7 +19,7 @@ describe('Game', function() {
     expect(game.allItems).toEqual(itemBag);
     expect(game.allEnemies).toEqual(enemyBag);
     expect(game.lootTable.length).toEqual(4);
-    expect(game.currentEnemy).toEqual(undefined);
+    expect(game.currentEnemy).toEqual({});
   });
 
   it('shoud test that a loot table is correctly built from all items', function() {
@@ -35,5 +35,11 @@ describe('Game', function() {
     game.awardLoot();
     const playerItems = Object.keys(game.player.items);
     expect(playerItems.length).toEqual(1);
+  });
+
+  it('should test that a current enemy is set', function() {
+    game.setCurrentEnemy('streetPunk');
+    const expectedEnemy = game.allEnemies['streetPunk'];
+    expect(game.currentEnemy).toEqual(expectedEnemy);
   });
 });
