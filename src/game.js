@@ -53,4 +53,11 @@ export class Game {
   setCombatTurn(roll) {
     roll === 1 ? this.combatTurn = "player" : this.combatTurn = "enemy";
   }
+
+  runEnemyTurn() {
+    this.currentEnemy.attack(this.player);
+  }
+
+  //checkDeath
+    //isDead
 }

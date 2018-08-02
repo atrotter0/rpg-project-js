@@ -1,5 +1,5 @@
 import { Game } from './../src/game.js';
-import { Player } from './../src/player.js';
+import { Player, Nano, Scrapper, Merc } from './../src/player.js';
 import { Item } from './../src/item.js';
 import { ItemBag } from './../src/itemBag.js';
 import { EnemyBag } from './../src/enemyBag.js';
@@ -50,5 +50,14 @@ describe('Game', function() {
   it('should test that combatTurn is set from playerRoll', function() {
     game.setCombatTurn(1);
     expect(game.combatTurn).toEqual("player");
+  });
+
+  it('should test that enemy attacks player', function() {
+    const nano = new Nano();
+    const streetPunk = game.allEnemies['streetPunk'];
+    game.player = nano;
+    game.currentEnemy = streetPunk;
+    game.runEnemyTurn();
+    expect(game.player.stats.stamina).toEqual(9);
   });
 });

@@ -8,4 +8,8 @@ export class Enemy {
     this.hp = hp;
     this.exp = exp;
   }
+
+  attack(player) {
+    player.stats.stamina -= this.damage;
+  }
 }
