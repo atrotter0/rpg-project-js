@@ -5,7 +5,7 @@ export class Enemy {
     this.attackDescriptor = attackDescriptor;
     this.damage = damage;
     this.specialDamage = specialDamage;
-    this.hp = hp;
+    this.stats = { stamina: hp };
     this.exp = exp;
   }
 

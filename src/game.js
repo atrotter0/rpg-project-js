@@ -58,6 +58,7 @@ export class Game {
     this.currentEnemy.attack(this.player);
   }
 
-  //checkDeath
-    //isDead
+  isDead(enemyOrPlayer) {
+    if (enemyOrPlayer.stats.stamina <= 0) return true;
+  }
 }
