@@ -1,10 +1,12 @@
-# Project Title
+# Cyberpunk RPG Project
 
-#### Epicodus Intro to Programming: Lesson, Date
+#### Epicodus JavaScript exercise, 08.01.18 -  08.02.18
 
-#### By Your Name Here
+#### By Abel Trotter and Elly Maimon
 
 ## Description
+
+A cyberpunk text-based RPG adventure built with JavaScript.
 
 ## Setup on OSX
 
@@ -34,4 +36,4 @@
 
 This software is licensed under the MIT license.
 
-Copyright (c) 2018 **Your Name Here**
+Copyright (c) 2018 **Abel Trotter and Elly Maimon**
