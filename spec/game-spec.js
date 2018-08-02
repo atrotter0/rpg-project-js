@@ -31,6 +31,10 @@ describe('Game', function() {
     expect(game.allItemsCount()).toEqual(4);
   });
 
+  it('should test that lootTablePositions returns a max positions in lootTable', function() {
+    expect(game.lootTablePositions()).toEqual(3);
+  });
+
   it('should test that an item is awarded to player', function() {
     game.awardLoot();
     const playerItems = Object.keys(game.player.items);
