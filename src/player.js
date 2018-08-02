@@ -2,8 +2,8 @@ import { Item } from './item';
 import { ItemBag } from './itemBag';
 
 export class Player {
-  constructor(name) {
-    this.name = name;
+  constructor() {
+    this.name = "";
     this.level = 1;
     this.exp = 0;
     this.expToNextLevel = 100;
@@ -16,8 +16,8 @@ export class Player {
 }
 
 export class Nano extends Player {
-  constructor(name) {
-    super(name);
+  constructor() {
+    super();
     this.stats = {
       instinct: 2,
       connectivity: 4,
@@ -33,8 +33,8 @@ export class Nano extends Player {
 }
 
 export class Scrapper extends Player {
-  constructor(name) {
-    super(name);
+  constructor() {
+    super();
     this.stats = {
       instinct: 3,
       connectivity: 2,
@@ -50,8 +50,8 @@ export class Scrapper extends Player {
 }
 
 export class Merc extends Player {
-  constructor(name) {
-    super(name);
+  constructor() {
+    super();
     this.stats = {
       instinct: 1,
       connectivity: 1,

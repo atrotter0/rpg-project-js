@@ -4,8 +4,8 @@ import { ItemBag } from './../src/itemBag.js';
 
 describe('Player', function() {
   it('should test whether a Player has properties after instantiation', function() {
-    const player1 = new Player("Kevin");
-    expect(player1.name).toEqual("Kevin");
+    const player1 = new Player();
+    expect(player1.name).toEqual("");
     expect(player1.level).toEqual(1);
     expect(player1.exp).toEqual(0);
     expect(player1.expToNextLevel).toEqual(100);
@@ -16,8 +16,8 @@ describe('Player', function() {
   });
 
   it('should test whether a Nano has properties after instantiation', function() {
-    const player1 = new Nano("Elly");
-    expect(player1.name).toEqual("Elly");
+    const player1 = new Nano();
+    expect(player1.name).toEqual("");
     expect(player1.level).toEqual(1);
     expect(player1.exp).toEqual(0);
     expect(player1.expToNextLevel).toEqual(100);
@@ -33,8 +33,8 @@ describe('Player', function() {
   });
 
   it('should test whether a Scrapper has properties after instantiation', function() {
-    const player1 = new Scrapper("Pete");
-    expect(player1.name).toEqual("Pete");
+    const player1 = new Scrapper();
+    expect(player1.name).toEqual("");
     expect(player1.level).toEqual(1);
     expect(player1.exp).toEqual(0);
     expect(player1.expToNextLevel).toEqual(100);
@@ -50,8 +50,8 @@ describe('Player', function() {
   });
 
   it('should test whether a Merc has properties after instantiation', function() {
-    const player1 = new Merc("Josh");
-    expect(player1.name).toEqual("Josh");
+    const player1 = new Merc();
+    expect(player1.name).toEqual("");
     expect(player1.level).toEqual(1);
     expect(player1.exp).toEqual(0);
     expect(player1.expToNextLevel).toEqual(100);
