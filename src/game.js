@@ -21,8 +21,16 @@ export class Game {
     return this.lootTable.length;
   }
 
+  lootTablePositions() {
+    if (this.lootTable.length > 1) {
+      return this.lootTable.length - 1;
+    } else {
+      return 0;
+    }
+  }
+
   awardLoot() {
-    const number = Math.floor(Math.random() * this.allItemsCount());
+    const number = Math.floor(Math.random() * this.lootTablePositions());
     const loot = this.allItems[this.lootTable[number]];
     this.player.items[loot.id] = loot;
   }
@@ -39,6 +47,10 @@ export class Game {
 
   rollInitiative() {
     const playerRoll = Math.floor(Math.random() * 2) + 1;
-    playerRoll === 1 ? this.combatTurn = "player" : this.combatTurn = "enemy";
+    this.setCombatTurn(playerRoll);
+  }
+
+  setCombatTurn(roll) {
+    roll === 1 ? this.combatTurn = "player" : this.combatTurn = "enemy";
   }
 }

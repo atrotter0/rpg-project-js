@@ -42,4 +42,9 @@ describe('Game', function() {
     const expectedEnemy = game.allEnemies['streetPunk'];
     expect(game.currentEnemy).toEqual(expectedEnemy);
   });
+
+  it('should test that combatTurn is set from playerRoll', function() {
+    game.setCombatTurn(1);
+    expect(game.combatTurn).toEqual("player");
+  });
 });
