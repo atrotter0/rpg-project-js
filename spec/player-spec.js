@@ -1,6 +1,7 @@
 import { Player, Nano, Scrapper, Merc } from './../src/player.js';
 import { Item } from './../src/item.js';
 import { ItemBag } from './../src/itemBag.js';
+import { Enemy } from './../src/enemy.js';
 
 describe('Player', function() {
   it('should test whether a Player has properties after instantiation', function() {
@@ -27,6 +28,7 @@ describe('Player', function() {
     expect(player1.stats.stamina).toEqual(10);
     expect(player1.stats.energy).toEqual(10);
     expect(player1.stats.resourcefulness).toEqual(1);
+    expect(player1.primaryStat).toEqual("connectivity");
     expect(player1.items.dataPad.id).toEqual("dataPad");
     expect(player1.equippedWeapon.length).toEqual(undefined);
     expect(player1.ahnCoin).toEqual(0);
@@ -44,6 +46,7 @@ describe('Player', function() {
     expect(player1.stats.stamina).toEqual(15);
     expect(player1.stats.energy).toEqual(15);
     expect(player1.stats.resourcefulness).toEqual(3);
+    expect(player1.primaryStat).toEqual("instinct");
     expect(player1.items.photonPistol.id).toEqual("photonPistol");
     expect(player1.equippedWeapon.length).toEqual(undefined);
     expect(player1.ahnCoin).toEqual(0);
@@ -57,11 +60,20 @@ describe('Player', function() {
     expect(player1.expToNextLevel).toEqual(100);
     expect(player1.stats.instinct).toEqual(1);
     expect(player1.stats.connectivity).toEqual(1);
-    expect(player1.stats.might).toEqual(4);
+    expect(player1.stats.might).toEqual(5);
     expect(player1.stats.stamina).toEqual(20);
     expect(player1.stats.resourcefulness).toEqual(2);
+    expect(player1.primaryStat).toEqual("might");
     expect(player1.items.laserGatling.id).toEqual("laserGatling");
     expect(player1.equippedWeapon.length).toEqual(undefined);
     expect(player1.ahnCoin).toEqual(0);
+  });
+
+  it('should test that a player damages an enemy when it attacks', function() {
+    const merc = new Merc();
+    merc.equippedWeapon = merc.items.laserGatling;
+    const enemy = new Enemy("streetPunk", "Street Punk", "punches", 1, 3, 8, 10);
+    merc.attack(enemy);
+    expect(enemy.stats.stamina).toEqual(0);
   });
 });
