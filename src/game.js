@@ -38,7 +38,6 @@ export class Game {
   startBattle(enemyId) {
     this.setCurrentEnemy(enemyId);
     this.rollInitiative();
-    //allowTurn();
   }
 
   setCurrentEnemy(enemyId) {

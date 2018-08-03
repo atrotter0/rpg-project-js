@@ -6,7 +6,9 @@
 
 ## Description
 
-A cyberpunk text-based RPG adventure built with JavaScript.
+A cyberpunk RPG adventure built with JavaScript.
+
+*Note: There is no front-end is currently, only the back-end logic and specs have been built.
 
 ## Setup on OSX
 

@@ -31,7 +31,7 @@ describe('Game', function() {
     expect(game.allItemsCount()).toEqual(4);
   });
 
-  it('should test that lootTablePositions returns a max positions in lootTable', function() {
+  it('should test that lootTablePositions returns max positions in lootTable', function() {
     expect(game.lootTablePositions()).toEqual(3);
   });
 
